@@ -1,0 +1,56 @@
+<mat-card>
+
+    <!-- <mat-accordion multi="true">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <div class="mat-h1">Prijava korisnika</div>
+            </mat-expansion-panel-header> -->
+    <div class="mat-h1">Prijava korisnika</div>
+    <form>
+        <table>
+            <tr>
+                <!-- <td>Korisnicko ime:</td> -->
+                <td class="mat-body-2">Korisnicko ime</td> 
+                <mat-form-field>
+                    <td><input matInput name="kor_ime" type="text" [(ngModel)]='kor_ime'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Lozinka</td> 
+                <mat-form-field>
+                    <td><input matInput name="lozinka" pattern="" type="text" [(ngModel)]='lozinka'title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Tip</td>
+                <mat-form-field>
+                    <td>
+                        <mat-select matInput name="tip" [(ngModel)]='tip'>
+                            <mat-option value="o">Organizator</mat-option>
+                            <mat-option value="d">Delegat</mat-option>
+                            <mat-option value="v">Vodja</mat-option>
+                        </mat-select>
+                    </td>
+            </mat-form-field>
+            </tr>
+            <tr>
+                <td colspan="2"><div *ngIf="greska" style="color: red">{{greska}}</div></td>
+            </tr>
+            <tr>
+                <!-- <button (click)='prijava()'>Prijava</button> -->
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" (click)="prijava()">Prijavi se</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" (click)="registracija()">Registracija</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" (click)="neregistrovan()">Nastavi kao neregistrovani korisnik</button></td>
+            </tr>
+            <tr>
+                <!-- <button (click)='neregistrovan()'></button> -->
+            </tr>
+        </table>
+    </form>
+<!-- </mat-expansion-panel>
+</mat-accordion> -->
+</mat-card> 

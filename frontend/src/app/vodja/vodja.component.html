@@ -1,0 +1,60 @@
+<mat-card>
+    <div class="mat-h1">Dodavanje sportiste</div>
+    <form>
+        <table>
+            <tr>
+                <td class="mat-body-2">Ime:</td>
+                <mat-form-field>
+                    <td><input matInput name="imeSportiste" type="text" [(ngModel)]='imeSportiste'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Prezime:</td>
+                <mat-form-field>
+                    <td><input matInput name="prezimeimeSportiste" type="text" [(ngModel)]='prezimeSportiste'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Pol:</td> 
+                <mat-form-field>
+                    <td><mat-select matInput name="polSportiste" [(ngModel)]='polSportiste'>
+                        <mat-option value="m">m</mat-option>
+                        <mat-option value="z">z</mat-option>
+                    </mat-select></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Sport:</td>
+                <mat-form-field>
+                    <td>
+                        <mat-select matInput name="sportSportiste" [(ngModel)]='sportSportiste' (selectionChange)='sportIzabran($event)'>
+                            <mat-option *ngFor='let s of sportovi' value="{{s.naziv}}">{{s.naziv}}</mat-option>
+                        </mat-select>
+                    </td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Disciplina:</td>
+                <mat-form-field>
+                    <td>
+                        <mat-select matInput name="disciplinaSportiste" [(ngModel)]='disciplinaSportiste'>
+                            <mat-option *ngFor='let d of discipline' value="{{d.naziv}}">{{d.naziv}}</mat-option>
+                        </mat-select>
+                    </td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td colspan="2"><div *ngIf="porukaGreske" style="color: red">{{porukaGreske}}</div></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" (click)='dodajSportistu()'>Dodaj</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" routerLink="/">Pocetna</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div *ngIf="porukaUspeha" style="color: green">{{porukaUspeha}}</div></td>
+            </tr>
+        </table>
+    </form>
+</mat-card>

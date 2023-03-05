@@ -1,0 +1,173 @@
+<mat-card>
+    <div class="mat-h1">Registracija korisnika</div>
+    <div *ngIf='!zavrseno'>
+        <form (submit)="reg(regForm)" #regForm="ngForm">
+            <table>
+                <tr>
+                    <td class="mat-body-2">Korisnicko ime:</td> 
+                    <mat-form-field>
+                        <td><input required matInput name="kor_ime" type="text" [(ngModel)]='kor_ime'></td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Lozinka:</td> 
+                    <mat-form-field>
+                        <td><input required matInput name="lozinka" type="password" pattern="^(?!.*(.)\1\1\1)(?=[a-zA-z])(?=(.*\d){2,})(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[^\w\d\s]){2,}).{8,12}$" [(ngModel)]='lozinka'></td>
+                    </mat-form-field>                
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Potvrda lozinke:</td> 
+                    <mat-form-field>
+                        <td><input required matInput name="lozinka" type="password" pattern="^(?!.*(.)\1\1\1)(?=[a-zA-z])(?=(.*\d){2,})(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[^\w\d\s]){2,}).{8,12}$" [(ngModel)]='potvrda'></td>
+                    </mat-form-field>               
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Ime:</td>
+                    <mat-form-field>
+                        <td><input required matInput name="ime" type="text" [(ngModel)]='ime'></td>
+                    </mat-form-field>               
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Prezime:</td>
+                    <mat-form-field>
+                        <td><input required matInput name="prezime" type="text" [(ngModel)]='prezime'></td>
+                    </mat-form-field>               
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Zemlja:</td>
+                    <mat-form-field>
+                        <td>
+                            <mat-select required matInput name="zemlja" [(ngModel)]='zemlja'>
+                                <mat-option *ngFor='let z of zemlje' value="{{z.naziv}}">{{z.naziv}}</mat-option>
+                            </mat-select>
+                        </td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Elektronska posta:</td>
+                    <mat-form-field>
+                        <td><input required matInput name="email" type="email" [(ngModel)]='email'></td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Tip:</td>
+                    <mat-form-field>
+                        <td>
+                            <mat-select required matInput name="tip" [(ngModel)]='tip'>
+                                <mat-option value="d">Delegat</mat-option>
+                                <mat-option value="v">Vodja</mat-option>
+                            </mat-select>
+                        </td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td colspan="2"><div *ngIf="porukaGreske" style="color: red">{{porukaGreske}}</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="dugme" mat-raised-button color="accent" type="submit">Registruj se</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="dugme" mat-raised-button color="accent" routerLink="/">Pocetna</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div *ngIf='zavrseno'>
+        <table>
+            <tr><output>Vas zahtev je poslat organizatoru turnira.</output></tr>
+            <tr>
+                <a class="link" routerLink="/">Pocetna</a>
+            </tr>
+        </table>
+    </div>
+</mat-card>
+
+
+<!-- <mat-card>
+    <div class="mat-h1">Registracija korisnika</div>
+    <div *ngIf='!zavrseno'>
+        <form>
+            <table>
+                <tr>
+                    <td class="mat-body-2">Korisnicko ime:</td> 
+                    <mat-form-field>
+                        <td><input required matInput name="kor_ime" type="text" [(ngModel)]='kor_ime'></td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Lozinka:</td> 
+                    <mat-form-field>
+                        <td><input required matInput name="lozinka" type="password" pattern="^(?!.*(.)\1\1\1)(?=[a-zA-z])(?=(.*\d){2,})(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[^\w\d\s]){2,}).{8,12}$" [(ngModel)]='lozinka'></td>
+                    </mat-form-field>                
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Potvrda lozinke:</td> 
+                    <mat-form-field>
+                        <td><input required matInput name="lozinka" type="password" pattern="^(?!.*(.)\1\1\1)(?=[a-zA-z])(?=(.*\d){2,})(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[^\w\d\s]){2,}).{8,12}$" [(ngModel)]='potvrda'></td>
+                    </mat-form-field>               
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Ime:</td>
+                    <mat-form-field>
+                        <td><input required matInput name="ime" type="text" [(ngModel)]='ime'></td>
+                    </mat-form-field>               
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Prezime:</td>
+                    <mat-form-field>
+                        <td><input required matInput name="prezime" type="text" [(ngModel)]='prezime'></td>
+                    </mat-form-field>               
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Zemlja:</td>
+                    <mat-form-field>
+                        <td>
+                            <mat-select required matInput name="zemlja" [(ngModel)]='zemlja'>
+                                <mat-option *ngFor='let z of zemlje' value="{{z.naziv}}">{{z.naziv}}</mat-option>
+                            </mat-select>
+                        </td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Elektronska posta:</td>
+                    <mat-form-field>
+                        <td><input required matInput name="email" type="email" [(ngModel)]='email'></td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td class="mat-body-2">Tip:</td>
+                    <mat-form-field>
+                        <td>
+                            <mat-select required matInput name="tip" [(ngModel)]='tip'>
+                                <mat-option value="d">Delegat</mat-option>
+                                <mat-option value="v">Vodja</mat-option>
+                            </mat-select>
+                        </td>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <td colspan="2"><div *ngIf="porukaGreske" style="color: red">{{porukaGreske}}</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="dugme" mat-raised-button color="accent" (click)='reg()'>Registruj se</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="dugme" mat-raised-button color="accent" routerLink="/">Pocetna</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div *ngIf='zavrseno'>
+        <table>
+            <tr><output>Vas zahtev je poslat organizatoru turnira.</output></tr>
+            <tr>
+                <a class="link" routerLink="/">Pocetna</a>
+            </tr>
+        </table>
+    </div>
+</mat-card> -->
+
+
+

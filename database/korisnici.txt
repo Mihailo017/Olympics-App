@@ -1,0 +1,103 @@
+
+{
+    "_id" : ObjectId("613014c7912a2f0f0c96ce0c"),
+    "kor_ime" : "org",
+    "lozinka" : "org123",
+    "ime" : "Organizator",
+    "prezime" : "Organizator",
+    "zemlja" : "Japan",
+    "email" : "org@org.org",
+    "tip" : "o",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 0,
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507c238a54cb0b04312d63"),
+    "kor_ime" : "del1",
+    "lozinka" : "del123",
+    "ime" : "Delegat1",
+    "prezime" : "Delegat1",
+    "zemlja" : "Rusija",
+    "email" : "del@del.del",
+    "tip" : "d",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 2,
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507c428a54cb0b04312d64"),
+    "kor_ime" : "vodja1",
+    "lozinka" : "vodja123",
+    "ime" : "Vodja1",
+    "prezime" : "Vodja1",
+    "zemlja" : "Srbija",
+    "email" : "vodja1@vodja1.vodja1",
+    "tip" : "v",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 0,
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507c538a54cb0b04312d65"),
+    "kor_ime" : "vodja2",
+    "lozinka" : "v2",
+    "ime" : "Vodja2",
+    "prezime" : "Vodja2",
+    "zemlja" : "Rusija",
+    "email" : "vodja2@vodja2.vodja2",
+    "tip" : "v",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 0,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("61507c6a8a54cb0b04312d66"),
+    "kor_ime" : "vodja3",
+    "lozinka" : "v3",
+    "ime" : "Vodja3",
+    "prezime" : "Vodja3",
+    "zemlja" : "Kina",
+    "email" : "vodja3@vodja3.vodja3",
+    "tip" : "v",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 0,
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61508a359baffa2c3c40999c"),
+    "kor_ime" : "vodja4",
+    "lozinka" : "v4",
+    "ime" : "Vodja4",
+    "prezime" : "Vodja4",
+    "zemlja" : "Japan",
+    "email" : "vodja4@vodja4.vodja4",
+    "tip" : "v",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 0,
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61508a779baffa2c3c40999d"),
+    "kor_ime" : "vodja5",
+    "lozinka" : "v5",
+    "ime" : "Vodja5",
+    "prezime" : "Vodja5",
+    "zemlja" : "Australija",
+    "email" : "vodja5@vodja5.vodja5",
+    "tip" : "v",
+    "jeRegistrovan" : 1,
+    "brTakmicenja" : 0,
+    "__v" : 0
+}

@@ -1,0 +1,150 @@
+
+{
+    "_id" : ObjectId("611b91766fc6cb6feb68ea3c"),
+    "naziv" : "Srbija",
+    "sportisti" : 8,
+    "zlato" : 1,
+    "srebro" : 1,
+    "bronza" : 0,
+    "ukupno" : 2
+}
+
+{
+    "_id" : ObjectId("611b91766fc6cb6feb68ea3f"),
+    "naziv" : "Rusija",
+    "sportisti" : 7,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 1,
+    "ukupno" : 1
+}
+
+
+{
+    "_id" : ObjectId("611b91766fc6cb6feb68ea42"),
+    "naziv" : "Kina",
+    "sportisti" : 7,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6e4"),
+    "naziv" : "Japan",
+    "sportisti" : 2,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6e7"),
+    "naziv" : "Brazil",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6ea"),
+    "naziv" : "Australija",
+    "sportisti" : 2,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6ed"),
+    "naziv" : "Francuska",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6f0"),
+    "naziv" : "Holandija",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6f3"),
+    "naziv" : "Italija",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6f6"),
+    "naziv" : "Kanada",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6f9"),
+    "naziv" : "Kuba",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6fc"),
+    "naziv" : "Madjarska",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa6ff"),
+    "naziv" : "Nemacka",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}
+
+
+{
+    "_id" : ObjectId("614f6aeb42d9dcc98ccaa702"),
+    "naziv" : "Poljska",
+    "sportisti" : 0,
+    "zlato" : 0,
+    "srebro" : 0,
+    "bronza" : 0,
+    "ukupno" : 0
+}

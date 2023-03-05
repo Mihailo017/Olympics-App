@@ -1,0 +1,27 @@
+<mat-card>
+    <div class="mat-h1">Moja takmicenja</div>
+    <table  id="tabela">
+        <th style="text-align: center;">Disciplina</th>
+        <th style="text-align: center;">Tip</th>
+        <tr *ngFor="let t of takmicenjaMoja; let i = index" (click)='izaberiTakmicenje(i)'>
+            <td style="text-align: center;"><output>{{t.disciplina}}</output></td>
+            <td style="text-align: center;"><output>{{t.tip}}</output></td>
+        </tr>
+    </table>
+</mat-card>
+
+<mat-card>
+    <table>
+        <tr>
+            <td><button class="dugme" mat-raised-button color="accent" routerLink="/">Pocetna</button></td>
+        </tr>
+    </table>
+</mat-card>
+<!-- <div>
+        <table *ngFor="let t of takmicenjaMoja; let i = index">
+            <tr (click)='izaberiTakmicenje(i)'>
+                <td>{{t.disciplina}}</td>
+                <td>{{t.tip}}</td>
+            </tr>
+        </table>
+</div> -->

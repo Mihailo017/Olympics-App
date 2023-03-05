@@ -1,0 +1,67 @@
+{
+    "_id" : ObjectId("61507ba18a54cb0b04312d61"),
+    "naziv" : "100 metara trcanje",
+    "sport" : "Atletika",
+    "vrsta" : "ind",
+    "__v" : 0
+}{
+    "_id" : ObjectId("61507bb08a54cb0b04312d62"),
+    "naziv" : "200 metara trcanje",
+    "sport" : "Atletika",
+    "vrsta" : "ind",
+    "__v" : 0
+}{
+    "_id" : ObjectId("6150802a8a54cb0b04312d71"),
+    "naziv" : "drumska trka 225km",
+    "sport" : "Biciklizam",
+    "vrsta" : "ind",
+    "__v" : 0
+}{
+    "_id" : ObjectId("615083ab8a54cb0b04312d7d"),
+    "naziv" : "50m trostav",
+    "sport" : "Streljastvo",
+    "vrsta" : "ind",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61508aaf9baffa2c3c40999e"),
+    "naziv" : "800 metara trcanje",
+    "sport" : "Atletika",
+    "vrsta" : "ind",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61508ab39baffa2c3c40999f"),
+    "naziv" : "5000 metara trcanje",
+    "sport" : "Atletika",
+    "vrsta" : "ind",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61508ac89baffa2c3c4099a0"),
+    "naziv" : "skok u dalj",
+    "sport" : "Atletika",
+    "vrsta" : "ind",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61508acc9baffa2c3c4099a1"),
+    "naziv" : "bacanje kugle",
+    "sport" : "Atletika",
+    "vrsta" : "ind",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("61508ae49baffa2c3c4099a2"),
+    "naziv" : "10m vazdusni pistolj",
+    "sport" : "Streljastvo",
+    "vrsta" : "ind",
+    "__v" : 0
+}
+{    "_id" : ObjectId("61508aed9baffa2c3c4099a3"),
+    "naziv" : "10m vazdusna puska",
+    "sport" : "Streljastvo",
+    "vrsta" : "ind",
+    "__v" : 0
+}

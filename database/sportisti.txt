@@ -1,0 +1,309 @@
+
+{
+    "_id" : ObjectId("61507ca88a54cb0b04312d67"),
+    "ime" : "Srbin1",
+    "prezime" : "Srbin1",
+    "pol" : "m",
+    "disciplina" : "100 metara trcanje",
+    "drzava" : "Srbija",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507cae8a54cb0b04312d68"),
+    "ime" : "Srbin2",
+    "prezime" : "Srbin2",
+    "pol" : "m",
+    "disciplina" : "100 metara trcanje",
+    "drzava" : "Srbija",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507cbb8a54cb0b04312d69"),
+    "ime" : "Srpkinja1",
+    "prezime" : "Srpkinja1",
+    "pol" : "z",
+    "disciplina" : "200 metara trcanje",
+    "drzava" : "Srbija",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507cbf8a54cb0b04312d6a"),
+    "ime" : "Srpkinja2",
+    "prezime" : "Srpkinja2",
+    "pol" : "z",
+    "disciplina" : "200 metara trcanje",
+    "drzava" : "Srbija",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507d918a54cb0b04312d6b"),
+    "ime" : "Rus1",
+    "prezime" : "Rus1",
+    "pol" : "m",
+    "disciplina" : "100 metara trcanje",
+    "drzava" : "Rusija",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507d958a54cb0b04312d6c"),
+    "ime" : "Rus2",
+    "prezime" : "Rus2",
+    "pol" : "m",
+    "disciplina" : "100 metara trcanje",
+    "drzava" : "Rusija",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507e0d8a54cb0b04312d6d"),
+    "ime" : "Kinez1",
+    "prezime" : "Kinez1",
+    "pol" : "m",
+    "disciplina" : "100 metara trcanje",
+    "drzava" : "Kina",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507e148a54cb0b04312d6e"),
+    "ime" : "Kinez2",
+    "prezime" : "Kinez2",
+    "pol" : "m",
+    "disciplina" : "100 metara trcanje",
+    "drzava" : "Kina",
+    "sport" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615080468a54cb0b04312d72"),
+    "ime" : "Ruskinja1",
+    "prezime" : "Ruskinja1",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Rusija",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615080508a54cb0b04312d73"),
+    "ime" : "Ruskinja2",
+    "prezime" : "Ruskinja2",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Rusija",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("6150805e8a54cb0b04312d74"),
+    "ime" : "Ruskinja3",
+    "prezime" : "Ruskinja3",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Rusija",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615080748a54cb0b04312d75"),
+    "ime" : "Kineskinja1",
+    "prezime" : "Kineskinja1",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Kina",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615080778a54cb0b04312d76"),
+    "ime" : "Kineskinja2",
+    "prezime" : "Kineskinja2",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Kina",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("6150809a8a54cb0b04312d77"),
+    "ime" : "Kineskinja3",
+    "prezime" : "Kineskinja3",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Kina",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615080d48a54cb0b04312d78"),
+    "ime" : "Srpkinja3",
+    "prezime" : "Srpkinja3",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Srbija",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615080d88a54cb0b04312d79"),
+    "ime" : "Srpkinja4",
+    "prezime" : "Srpkinja4",
+    "pol" : "z",
+    "disciplina" : "drumska trka 225km",
+    "drzava" : "Srbija",
+    "sport" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615088b19baffa2c3c409996"),
+    "ime" : "Srbin3",
+    "prezime" : "Srbin3",
+    "pol" : "m",
+    "disciplina" : "50m trostav",
+    "drzava" : "Srbija",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615088b69baffa2c3c409997"),
+    "ime" : "Srbin4",
+    "prezime" : "Srbin4",
+    "pol" : "m",
+    "disciplina" : "50m trostav",
+    "drzava" : "Srbija",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615088d99baffa2c3c409998"),
+    "ime" : "Rus3",
+    "prezime" : "Rus3",
+    "pol" : "m",
+    "disciplina" : "50m trostav",
+    "drzava" : "Rusija",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615088dc9baffa2c3c409999"),
+    "ime" : "Rus4",
+    "prezime" : "Rus4",
+    "pol" : "m",
+    "disciplina" : "50m trostav",
+    "drzava" : "Rusija",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("615088f49baffa2c3c40999a"),
+    "ime" : "Kinez3",
+    "prezime" : "Kinez3",
+    "pol" : "m",
+    "disciplina" : "50m trostav",
+    "drzava" : "Kina",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615088fa9baffa2c3c40999b"),
+    "ime" : "Kinez4",
+    "prezime" : "Kinez4",
+    "pol" : "m",
+    "disciplina" : "50m trostav",
+    "drzava" : "Kina",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61508bc29baffa2c3c4099a4"),
+    "ime" : "Japanac1",
+    "prezime" : "Japanac1",
+    "pol" : "m",
+    "disciplina" : "10m vazdusna puska",
+    "drzava" : "Japan",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61508bc59baffa2c3c4099a5"),
+    "ime" : "Japanac2",
+    "prezime" : "Japanac2",
+    "pol" : "m",
+    "disciplina" : "10m vazdusna puska",
+    "drzava" : "Japan",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61508bee9baffa2c3c4099a6"),
+    "ime" : "Australijanac1",
+    "prezime" : "Australijanac1",
+    "pol" : "m",
+    "disciplina" : "10m vazdusna puska",
+    "drzava" : "Australija",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("61508bf39baffa2c3c4099a7"),
+    "ime" : "Australijanac2",
+    "prezime" : "Australijanac2",
+    "pol" : "m",
+    "disciplina" : "10m vazdusna puska",
+    "drzava" : "Australija",
+    "sport" : "Streljastvo",
+    "__v" : 0
+}

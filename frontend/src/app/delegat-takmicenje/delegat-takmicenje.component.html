@@ -1,0 +1,332 @@
+
+<mat-card *ngIf='!started'> 
+    <div class="mat-h1">Unos datuma i vremena pocetka i kraja takmicenja</div>
+    <div class="mat-h2">{{discilipnaTakmicenja.sport}} | {{izabranoTakmicenje.disciplina}} | {{izabranoTakmicenje.tip}}</div>
+    <form>
+        <table>
+            <tr>
+                <td class="mat-body-2">Datum pocetka:</td>
+                <mat-form-field>
+                    <td><input matInput name="datumPocetka" type="date" [(ngModel)]='datumPocetka'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Vreme pocetka:</td>
+                <mat-form-field>
+                    <td><input matInput name="vremePocetka" type="time" [(ngModel)]='vremePocetka'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Datum kraja:</td>
+                <mat-form-field *ngIf='tenis'>
+                    <td ><input matInput name="datumKraja1" type="date" [(ngModel)]='datumKraja'></td>
+                </mat-form-field>
+                <mat-form-field *ngIf='!tenis'>
+                    <td ><input matInput name="datumKraja2" type="date" [(ngModel)]='datumPocetka' disabled='true'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Vreme kraja:</td>
+                <mat-form-field>
+                    <td><input matInput  name="vremeKraja" type="time" [(ngModel)]='vremeKraja'></td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td class="mat-body-2">Lokacija:</td>
+                <mat-form-field>
+                    <td>
+                        <mat-select matInput name="lokacija" [(ngModel)]='lokacija'>
+                            <mat-option *ngFor='let l of lokacije' value="{{l.naziv}}">{{l.naziv}}</mat-option>
+                        </mat-select>
+                    </td>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" (click)='unesi()'>Unesi</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="dugme" mat-raised-button color="accent" routerLink="/">Pocetna</button></td>
+            </tr>
+            <tr>
+                <div *ngIf='porukaGreske' style="color:red">{{porukaGreske}}</div>
+            </tr>
+        </table>
+    </form>
+</mat-card>
+
+<!-- <div *ngIf='!started'>
+    <form>
+        <table>
+            <tr>
+                <td>{{discilipnaTakmicenja.sport}}</td>
+                <td>{{izabranoTakmicenje.disciplina}}</td>
+                <td>{{izabranoTakmicenje.tip}}</td>
+            </tr>
+            <tr>
+                <td>Datum pocetka:</td>
+                <td><input name="datumPocetka" type="date" [(ngModel)]='datumPocetka'></td>
+            </tr>
+            <tr>
+                <td>Vreme pocetka:</td>
+                <td><input name="vremePocetka" type="time" [(ngModel)]='vremePocetka'></td>
+            </tr>
+            <tr>
+                <td>Datum kraja:</td>
+                <td *ngIf='!ind'><input name="datumKraja1" type="date" [(ngModel)]='datumKraja'></td>
+                <td *ngIf='ind'><input name="datumKraja2" type="date" [(ngModel)]='datumPocetka' disabled='true'></td>
+            </tr>
+            <tr>
+                <td>Vreme kraja:</td>
+                <td><input name="vremeKraja" type="time" [(ngModel)]='vremeKraja'></td>
+            </tr>
+            <tr>
+                <td>Lokacija:</td>
+                <td><select name="lokacija" [(ngModel)]='lokacija'>
+                    <option *ngFor='let l of lokacije' value="{{l.naziv}}">{{l.naziv}}</option>
+                </select></td>
+            </tr>
+            <tr>
+                <button (click)='unesi()'>Unesi</button>
+            </tr>
+        </table>
+    </form>
+</div> -->
+
+<mat-card *ngIf='started && !finished && !tenis'>
+    <div class="mat-h1">Prijavljeni takmicari</div>
+    <div class="mat-h2">Unesite rezultat u formatu: {{izabranoTakmicenje.formatRezultata}} | Krug: {{krug+1}}</div>
+    <form>
+        <table id="tabela">
+            <th  style="text-align: center;">Redni broj</th>
+            <th  style="text-align: center;">Ime</th>
+            <th  style="text-align: center;">Prezime</th>
+            <th  style="text-align: center;">Pol</th>
+            <th  style="text-align: center;">Drzava</th>
+            <th  style="text-align: center;">Rezultat</th>
+            <th></th>
+            <tr>
+                <td>{{index+1}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.ime}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.prezime}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.pol}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.drzava}}</td>
+                <mat-form-field>
+                    <td>
+                        <input style="width: 100%;" matInput name="rezultat" type="text" [(ngModel)]='rezultat'>
+                    </td>
+                </mat-form-field>
+                <td>
+                    <button *ngIf='sledeci' class="dugme" mat-raised-button color="accent" name="sledeci" (click)='dalje()'>Sledeci</button>
+                    <button *ngIf='!sledeci' class="dugme" mat-raised-button color="accent" name="zavrsi" (click)='zavrsi()'>Zavrsi Takmicenje</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <div *ngIf='porukaGreske' style="color:red">{{porukaGreske}}</div>
+                </td>
+
+            </tr>
+        </table>
+    </form>
+</mat-card>
+
+<!-- <mat-card *ngIf='started && !finished && tenis'>
+    <div class="mat-h1">Prijavljeni takmicari</div>
+    <div class="mat-h2">Unesite rezultate | {{tenisFaza[index]}}</div>
+    <form>
+        <table id="tabela">
+            <th  style="text-align: center;">Mec</th>
+            <th  style="text-align: center;">Osvojeni setovi 1</th>
+            <th  style="text-align: center;">Osvojeni setovi 2</th>
+            <th  style="text-align: center;">Akcija</th>
+            <tr>
+                <td style="text-align: center;">{{tenisRez[index].teniser1.drzava}} | {{tenisRez[index].teniser1.prezime}} - {{tenisRez[index].teniser2.prezime}} | {{tenisRez[index].teniser2.drzava}}</td>
+                <mat-form-field>
+                    <td>
+                        <input style="width: 100%;" matInput name="rezultat" type="text" [(ngModel)]='rezultat'>
+                    </td>
+                </mat-form-field>
+                <mat-form-field>
+                    <td>
+                        <input style="width: 100%;" matInput name="rezultat2" type="text" [(ngModel)]='rezultat2'>
+                    </td>
+                </mat-form-field>
+                <td>
+                    <button *ngIf='sledeci' class="dugme" mat-raised-button color="accent" name="sledeci" (click)='daljeTenis()'>Sledeci</button>
+                    <button *ngIf='!sledeci' class="dugme" mat-raised-button color="accent" name="zavrsi" (click)='zavrsiTenis()'>Zavrsi Takmicenje</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <div *ngIf='porukaGreske' style="color:red">{{porukaGreske}}</div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</mat-card> -->
+
+<mat-card *ngIf='started && !finished && tenis'>
+    <div class="mat-h1">Prijavljeni takmicari</div>
+    <div class="mat-h2">Unesite rezultate | {{tenisFaza[index]}}</div>
+    <form>
+        <table id="tabela">
+            <th  style="text-align: center;">Mec</th>
+            <th  style="text-align: center;">Osvojeni setovi 1</th>
+            <th  style="text-align: center;">Osvojeni setovi 2</th>
+            <th  style="text-align: center;">Akcija</th>
+            <tr>
+                <td style="text-align: center;">{{tenisRez[index].teniser1.drzava}} | {{tenisRez[index].teniser1.prezime}} - {{tenisRez[index].teniser2.prezime}} | {{tenisRez[index].teniser2.drzava}}</td>
+                <td colspan="1">
+                    <mat-form-field>
+                        <input style="width: 100%;" matInput name="rezultat" type="text" [(ngModel)]='rezultat'>
+                    </mat-form-field>
+                </td>
+                <td colspan="1">
+                    <mat-form-field>
+                        <input style="width: 100%;" matInput name="rezultat2" type="text" [(ngModel)]='rezultat2'>
+                    </mat-form-field>   
+                </td>
+                <td>
+                    <button *ngIf='sledeci' class="dugme" mat-raised-button color="accent" name="sledeci" (click)='daljeTenis()'>Sledeci</button>
+                    <button *ngIf='!sledeci' class="dugme" mat-raised-button color="accent" name="zavrsi" (click)='zavrsiTenis()'>Zavrsi Takmicenje</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <div *ngIf='porukaGreske' style="color:red">{{porukaGreske}}</div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</mat-card>
+
+<!-- <mat-card *ngIf='started && !finished'>
+    <div class="mat-h1">Prijavljeni takmicari</div>
+    <div class="mat-h2">Unesite rezultat u formatu: {{izabranoTakmicenje.formatRezultata}}</div>
+    <form>
+        <table id="tabela">
+            <th  style="text-align: center;">Redni broj</th>
+            <th  style="text-align: center;">Ime</th>
+            <th  style="text-align: center;">Prezime</th>
+            <th  style="text-align: center;">Pol</th>
+            <th  style="text-align: center;">Drzava</th>
+            <th  style="text-align: center;">Rezultat</th>
+            <th></th>
+            <tr *ngFor='let t of takmicari'>
+                <td>{{index+1}}</td>
+                <td>{{t.takmicar.ime}}</td>
+                <td>{{t.takmicar.prezime}}</td>
+                <td>{{t.takmicar.pol}}</td>
+                <td>{{t.takmicar.drzava}}</td>
+                <mat-form-field>
+                    <td>
+                        <input matInput name="rezultat" type="text" [(ngModel)]='rezultat' (change)='unetRezultat(t)'>
+                    </td>
+                </mat-form-field>
+                <td>
+                    <button *ngIf='sledeci' class="dugme" mat-raised-button color="accent" name="sledeci" (click)='dalje()'>Sledeci</button>
+                    <button *ngIf='!sledeci' class="dugme" mat-raised-button color="accent" name="zavrsi" (click)='zavrsi()'>Zavrsi Takmicenje</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</mat-card> -->
+
+<!-- <div *ngIf='started && !finished'>
+    <h2>Prijavljeni takmicari</h2>
+    <h3>Unesite rezultat u formatu: {{izabranoTakmicenje.formatRezultata}}</h3>
+    <form>
+        <table>
+            <th>Redni broj</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Pol</th>
+            <th>Drzava</th>
+            <th>Rezultat</th>
+            <tr>
+                <td>{{index+1}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.ime}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.prezime}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.pol}}</td>
+                <td style="text-align: center;">{{takmicari[index].takmicar.drzava}}</td>
+                <td><input name="rezultat" type="text" [(ngModel)]='rezultat'></td>
+            </tr>
+            <tr><button *ngIf='sledeci' name="sledeci" (click)='dalje()'>Sledeci</button>
+                <button *ngIf='zadnji' name="zavrsi" (click)='zavrsi()'>Zavrsi Takmicenje</button>
+            </tr>
+        </table>
+    </form>
+</div> -->
+
+<mat-card *ngIf='finished && !tenis'>
+    <div class="mat-h1">Takmicenje je zavrseno!</div>
+    <table id="tabela">
+        <th>Medalja</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Drzava</th>
+        <th>Rezultat</th>
+        <tr>
+            <td>Zlato</td>
+            <td>{{zlato.ime}}</td>
+            <td>{{zlato.prezime}}</td>
+            <td>{{zlato.drzava}}</td>
+            <td *ngIf='!ispisKonacnogRezultata'>{{zlato1.rezultati[0]}}</td>
+            <td *ngIf='ispisKonacnogRezultata'>{{zlato1.konacanRezultat}}</td>
+        </tr>
+        <tr>
+            <td>Srebro</td>
+            <td>{{srebro.ime}}</td>
+            <td>{{srebro.prezime}}</td>
+            <td>{{srebro.drzava}}</td>
+            <td *ngIf='!ispisKonacnogRezultata'>{{srebro1.rezultati[0]}}</td>
+            <td *ngIf='ispisKonacnogRezultata'>{{srebro1.konacanRezultat}}</td>
+        </tr>
+        <tr>
+            <td>Bronza</td>
+            <td>{{bronza.ime}}</td>
+            <td>{{bronza.prezime}}</td>
+            <td>{{bronza.drzava}}</td>
+            <td *ngIf='!ispisKonacnogRezultata'>{{bronza1.rezultati[0]}}</td>
+            <td *ngIf='ispisKonacnogRezultata'>{{bronza1.konacanRezultat}}</td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <button class="dugme" mat-raised-button color="accent" name="nazad" routerLink='/delegat'>Nazad</button>
+            </td>
+        </tr>
+    </table>
+</mat-card>
+
+<mat-card *ngIf='finished && tenis'>
+    <div class="mat-h1">Takmicenje je zavrseno!</div>
+    <table id="tabela">
+        <th>Medalja</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Drzava</th>
+        <tr>
+            <td>Zlato</td>
+            <td>{{zlato.ime}}</td>
+            <td>{{zlato.prezime}}</td>
+            <td>{{zlato.drzava}}</td>
+        </tr>
+        <tr>
+            <td>Srebro</td>
+            <td>{{srebro.ime}}</td>
+            <td>{{srebro.prezime}}</td>
+            <td>{{srebro.drzava}}</td>
+        </tr>
+        <tr>
+            <td>Bronza</td>
+            <td>{{bronza.ime}}</td>
+            <td>{{bronza.prezime}}</td>
+            <td>{{bronza.drzava}}</td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <button class="dugme" mat-raised-button color="accent" name="nazad" routerLink='/delegat'>Nazad</button>
+            </td>
+        </tr>
+    </table>
+</mat-card>

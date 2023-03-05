@@ -1,0 +1,262 @@
+
+{
+    "_id" : ObjectId("61507e3b8a54cb0b04312d6f"),
+    "sportisti" : [ 
+        {
+            "_id" : "61507ca88a54cb0b04312d67",
+            "ime" : "Srbin1",
+            "prezime" : "Srbin1",
+            "pol" : "m",
+            "disciplina" : "100 metara trcanje",
+            "drzava" : "Srbija",
+            "sport" : "Atletika",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "61507cae8a54cb0b04312d68",
+            "ime" : "Srbin2",
+            "prezime" : "Srbin2",
+            "pol" : "m",
+            "disciplina" : "100 metara trcanje",
+            "drzava" : "Srbija",
+            "sport" : "Atletika",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "61507d918a54cb0b04312d6b",
+            "ime" : "Rus1",
+            "prezime" : "Rus1",
+            "pol" : "m",
+            "disciplina" : "100 metara trcanje",
+            "drzava" : "Rusija",
+            "sport" : "Atletika",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "61507d958a54cb0b04312d6c",
+            "ime" : "Rus2",
+            "prezime" : "Rus2",
+            "pol" : "m",
+            "disciplina" : "100 metara trcanje",
+            "drzava" : "Rusija",
+            "sport" : "Atletika",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "61507e0d8a54cb0b04312d6d",
+            "ime" : "Kinez1",
+            "prezime" : "Kinez1",
+            "pol" : "m",
+            "disciplina" : "100 metara trcanje",
+            "drzava" : "Kina",
+            "sport" : "Atletika",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "61507e148a54cb0b04312d6e",
+            "ime" : "Kinez2",
+            "prezime" : "Kinez2",
+            "pol" : "m",
+            "disciplina" : "100 metara trcanje",
+            "drzava" : "Kina",
+            "sport" : "Atletika",
+            "__v" : 0
+        }
+    ],
+    "rezultati1" : [],
+    "rezultati2" : [],
+    "rezultati3" : [],
+    "disciplina" : "100 metara trcanje",
+    "tip" : "m",
+    "brojTakmicara" : "=8",
+    "formatRezultata" : "CC,TT",
+    "brojKrugova" : 1,
+    "rangiranjeRezultata" : "min",
+    "pocetak" : "2021-09-28",
+    "kraj" : "2021-09-28",
+    "lokacija" : "atletski stadion",
+    "delegat" : "del1",
+    "status" : "zavrseno",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("615081408a54cb0b04312d7a"),
+    "sportisti" : [ 
+        {
+            "_id" : "615080468a54cb0b04312d72",
+            "ime" : "Ruskinja1",
+            "prezime" : "Ruskinja1",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Rusija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080508a54cb0b04312d73",
+            "ime" : "Ruskinja2",
+            "prezime" : "Ruskinja2",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Rusija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "6150805e8a54cb0b04312d74",
+            "ime" : "Ruskinja3",
+            "prezime" : "Ruskinja3",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Rusija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080748a54cb0b04312d75",
+            "ime" : "Kineskinja1",
+            "prezime" : "Kineskinja1",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Kina",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080778a54cb0b04312d76",
+            "ime" : "Kineskinja2",
+            "prezime" : "Kineskinja2",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Kina",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "6150809a8a54cb0b04312d77",
+            "ime" : "Kineskinja3",
+            "prezime" : "Kineskinja3",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Kina",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080d48a54cb0b04312d78",
+            "ime" : "Srpkinja3",
+            "prezime" : "Srpkinja3",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Srbija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080d88a54cb0b04312d79",
+            "ime" : "Srpkinja4",
+            "prezime" : "Srpkinja4",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Srbija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080468a54cb0b04312d72",
+            "ime" : "Ruskinja1",
+            "prezime" : "Ruskinja1",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Rusija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080508a54cb0b04312d73",
+            "ime" : "Ruskinja2",
+            "prezime" : "Ruskinja2",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Rusija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080778a54cb0b04312d76",
+            "ime" : "Kineskinja2",
+            "prezime" : "Kineskinja2",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Kina",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080748a54cb0b04312d75",
+            "ime" : "Kineskinja1",
+            "prezime" : "Kineskinja1",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Kina",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "6150809a8a54cb0b04312d77",
+            "ime" : "Kineskinja3",
+            "prezime" : "Kineskinja3",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Kina",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080d88a54cb0b04312d79",
+            "ime" : "Srpkinja4",
+            "prezime" : "Srpkinja4",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Srbija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "6150805e8a54cb0b04312d74",
+            "ime" : "Ruskinja3",
+            "prezime" : "Ruskinja3",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Rusija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }, 
+        {
+            "_id" : "615080d48a54cb0b04312d78",
+            "ime" : "Srpkinja3",
+            "prezime" : "Srpkinja3",
+            "pol" : "z",
+            "disciplina" : "drumska trka 225km",
+            "drzava" : "Srbija",
+            "sport" : "Biciklizam",
+            "__v" : 0
+        }
+    ],
+    "rezultati1" : [],
+    "rezultati2" : [],
+    "rezultati3" : [],
+    "disciplina" : "drumska trka 225km",
+    "tip" : "z",
+    "brojTakmicara" : "8",
+    "formatRezultata" : "CC:MM:SS",
+    "brojKrugova" : 1,
+    "rangiranjeRezultata" : "min",
+    "pocetak" : "",
+    "kraj" : "",
+    "lokacija" : "",
+    "delegat" : "del1",
+    "status" : "",
+    "__v" : 0
+}

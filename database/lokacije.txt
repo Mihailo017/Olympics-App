@@ -1,0 +1,23 @@
+
+{
+    "_id" : ObjectId("6123bd646fc6cb6feb691f35"),
+    "naziv" : "atletski stadion"
+}
+
+
+{
+    "_id" : ObjectId("6123bd646fc6cb6feb691f38"),
+    "naziv" : "bazen"
+}
+
+
+{
+    "_id" : ObjectId("6123bd646fc6cb6feb691f3b"),
+    "naziv" : "dvorana Tokio"
+}
+
+
+{
+    "_id" : ObjectId("6123bd646fc6cb6feb691f3e"),
+    "naziv" : "dvorana Saporo"
+}

@@ -1,0 +1,20 @@
+
+{
+    "_id" : ObjectId("61507b8f8a54cb0b04312d5f"),
+    "naziv" : "Atletika",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("61507b938a54cb0b04312d60"),
+    "naziv" : "Biciklizam",
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("615083a18a54cb0b04312d7c"),
+    "naziv" : "Streljastvo",
+    "__v" : 0
+}

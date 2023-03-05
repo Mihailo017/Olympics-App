@@ -1,0 +1,351 @@
+<mat-card>
+    <mat-accordion multi="true">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <div class="mat-h1">Dodavanje sporta</div>
+            </mat-expansion-panel-header>
+            <form>
+                <table>
+                    <tr>
+                        <td class="mat-body-2">Naziv:</td>
+                        <mat-form-field>
+                            <td><input matInput type="text" name="sport" [(ngModel)]='noviSport'></td>
+                        </mat-form-field>            
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button class="dugme" mat-raised-button color="accent" name="dodajSport" (click)='dodajSport()'>Dodaj</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div *ngIf="porukaSport" style="color: green">{{porukaSport}}</div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div *ngIf="porukaGreske" style="color: red">{{porukaGreske}}</div></td>
+                    </tr>
+                </table>
+            </form>      
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion multi="true">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <div class="mat-h1">Dodavanje discipline</div>
+            </mat-expansion-panel-header>
+            <form>
+                <table>
+                    <tr>
+                        <td class="mat-body-2">Naziv:</td>
+                        <mat-form-field>
+                            <td><input matInput type="text" name="disciplina" [(ngModel)]='novaDisciplina'></td>
+                        </mat-form-field>                        
+                    </tr>
+                    <tr>
+                        <td class="mat-body-2">Sport:</td>
+                        <mat-form-field>
+                            <td><mat-select matInput name="sportDiscipline" [(ngModel)]='sportDisciplina'>
+                                <mat-option *ngFor='let s of sportovi' value="{{s.naziv}}">{{s.naziv}}</mat-option>
+                            </mat-select></td>
+                        </mat-form-field>
+                    </tr>
+                    <tr>
+                        <td class="mat-body-2">Vrsta:</td>
+                        <mat-form-field>
+                            <td><mat-select matInput name="vrstaDiscipline" [(ngModel)]='vrstaDisciplina'>
+                                <mat-option value="ind">Individualna</mat-option>
+                                <mat-option value="ekip">Ekipna</mat-option>
+                            </mat-select></td>
+                        </mat-form-field>
+                    </tr>
+                    <!-- <tr>
+                        <td class="mat-body-2">Minimalan broj ucesnika:</td>
+                        <mat-form-field>
+                            <td><input matInput name="min" type="number" [(ngModel)]='minDisciplina'></td>
+                        </mat-form-field>
+                    </tr>
+                    <tr>
+                        <td class="mat-body-2">Maksimalan broj ucesnika:</td>
+                        <mat-form-field>
+                            <td><input matInput name="max" type="number" [(ngModel)]='maxDisciplina'></td>
+                        </mat-form-field>                        
+                    </tr> -->
+                    <tr>
+                        <td colspan="2">
+                            <button class="dugme" mat-raised-button color="accent" name="dodajDisciplinu" (click)='dodajDisciplinu()'>Dodaj</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div *ngIf="porukaDisciplina" style="color: green">{{porukaDisciplina}}</div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div *ngIf="porukaGreske" style="color: red">{{porukaGreske}}</div></td>
+                    </tr>
+                </table>
+            </form>    
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion multi="true">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <div class="mat-h1">Dodavanje takmicenja</div>
+            </mat-expansion-panel-header>
+            <form>
+                <table>
+                    <tr>
+                        <td class="mat-body-2">Disciplina:</td>
+                        <mat-form-field>
+                            <td><mat-select matInput name="disciplinaTakmicenja" [(ngModel)]='disciplinaTakmicenja' (selectionChange)='dohvatiTakmicare()'>
+                                <mat-option *ngFor='let d of discipline' value="{{d.naziv}}">{{d.naziv}}</mat-option>
+                            </mat-select></td>
+                        </mat-form-field>
+                    </tr>
+                    <tr>
+                        <td class="mat-body-2">Tip:</td>
+                        <mat-form-field>
+                            <td><mat-select matInput name="tipTakmicenja" [(ngModel)]='tipTakmicenja' (selectionChange)='dohvatiTakmicare()'>
+                                <mat-option value="m">Musko</mat-option>
+                                <mat-option value="z">Zensko</mat-option>
+                            </mat-select></td>
+                        </mat-form-field>
+                    </tr>
+                    <tr *ngIf='!tenis'>
+                        <td class="mat-body-2">Broj takmicara:</td>
+                        <mat-form-field>
+                            <td><mat-select matInput name="brojTakmicara" [(ngModel)]='brojTakmicara'>
+                                <mat-option value="4">4</mat-option>
+                                <mat-option value="8">8</mat-option>
+                                <mat-option value="16">16</mat-option>
+                                <mat-option value="=8">Najvise 8</mat-option>
+                            </mat-select></td>
+                        </mat-form-field>
+                    </tr>
+                    <tr *ngIf='!tenis'>
+                        <td class="mat-body-2">Format rezultata:</td>
+                        <mat-form-field>
+                            <td>
+                                <input matInput name="formatRezultata" type="text" [(ngModel)]='formatRezultata'>
+                            </td>
+                        </mat-form-field>
+                    </tr>
+                    <tr *ngIf='!tenis'>
+                        <td class="mat-body-2">Broj krugova:</td>
+                        <mat-form-field>
+                            <td>
+                                <input matInput name="brojKrugova(serija)" type="number" [(ngModel)]='brojKrugova'>
+                            </td>
+                        </mat-form-field>
+                    </tr>
+                    <tr *ngIf='!tenis'>
+                        <td class="mat-body-2">Rangiranje rezultata:</td>
+                        <mat-form-field>
+                            <td>
+                                <mat-select matInput name="rangiranjeRezultata" [(ngModel)]='rangiranjeRezultata'>
+                                    <mat-option value="max">Po najvecoj vrednosti</mat-option>
+                                    <mat-option value="min">Po najmanjoj vrednosti</mat-option>
+                                </mat-select>
+                            </td>
+                        </mat-form-field>
+                    </tr>
+                    <tr>
+                        <td class="mat-body-2">Delegat:</td>
+                        <mat-form-field>
+                            <td><mat-select matInput name="delegatTakmicenja" [(ngModel)]='delegatTakmicenja'>
+                                <mat-option *ngFor='let d of delegati' value="{{d.kor_ime}}">{{d.ime}}</mat-option>
+                            </mat-select></td>
+                        </mat-form-field>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button class="dugme" mat-raised-button color="accent" name="dodajTakmicenje" (click)='dodajTakmicenje()'>Dodaj</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div *ngIf="porukaTakmicenje" style="color: green">{{porukaTakmicenje}}</div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div *ngIf="porukaGreske" style="color: red">{{porukaGreske}}</div></td>
+                    </tr>
+                </table>
+            </form>    
+            <div class="mat-h1">Prijavljeni takmicari</div>
+            <table id="tabela">
+                <th>Redni broj</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Pol</th>
+                <th>Drzava</th>
+                <tr *ngFor="let t of takmicari; let i = index">
+                    <td>{{i+1}}</td>
+                    <td style="text-align: center;">{{t.ime}}</td>
+                    <td style="text-align: center;">{{t.prezime}}</td>
+                    <td style="text-align: center;">{{t.pol}}</td>
+                    <td style="text-align: center;">{{t.drzava}}</td>
+                </tr>
+            </table>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion multi="true">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <div class="mat-h1">Odobravanje korisnickih zahteva</div>
+            </mat-expansion-panel-header>
+            <table id="tabela" *ngIf='zahtevi'>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Drzava</th>
+                <th>Tip</th>
+                <th>Odluka</th>
+                <tr *ngFor='let z of zahtevi'>
+                    <td>
+                        {{z.ime}}
+                    </td>
+                    <td>
+                        {{z.prezime}}
+                    </td>
+                    <td>
+                        {{z.zemlja}}
+                    </td>
+                    <td>
+                        {{z.tip}}
+                    </td>
+                    <td>
+                        <button class="dugme" mat-raised-button color="accent" name="odobri" (click)='odobri(z)'>Odobri</button>
+                        <button class="dugme" mat-raised-button color="accent" name="odbij" (click)='odbij(z)'>Odbij</button>
+                    </td>
+                </tr>
+            </table>  
+        </mat-expansion-panel>
+    </mat-accordion>
+    <button class="dugme" style="width: 22%;" mat-raised-button color="accent" name="prijava" routerLink="/">Prijava</button>
+</mat-card>
+
+
+<!-- <div>
+    <h2>Dodavanje sporta</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Naziv:</td>
+                <td><input type="text" name="sport" [(ngModel)]='noviSport'></td>
+            </tr>
+            <tr>
+                <button name="dodajSport" (click)='dodajSport()'>Dodaj</button>
+            </tr>
+        </table>
+    </form>
+</div> -->
+
+<!-- <div>
+    <h2>Dodavanje discipline</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Naziv:</td>
+                <td><input type="text" name="disciplina" [(ngModel)]='novaDisciplina'></td>
+            </tr>
+            <tr>
+                <td>Sport:</td>
+                <td><select name="sportDiscipline" [(ngModel)]='sportDisciplina'>
+                    <option *ngFor='let s of sportovi' value="{{s.naziv}}">{{s.naziv}}</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Vrsta:</td>
+                <td><select name="vrstaDiscipline" [(ngModel)]='vrstaDisciplina'>
+                    <option value="ind">Individualna</option>
+                    <option value="ekip">Ekipna</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Minimalan broj ucesnika:</td>
+                <td><input name="min" type="number" [(ngModel)]='minDisciplina'></td>
+            </tr>
+            <tr>
+                <td>Maksimalan broj ucesnika:</td>
+                <td><input name="max" type="number" [(ngModel)]='maxDisciplina'></td>
+            </tr>
+            <tr>
+                <button name="dodajDisciplinu" (click)='dodajDisciplinu()'>Dodaj</button>
+            </tr>
+        </table>
+    </form>
+</div> -->
+
+<!-- <div>
+    <h2>Dodavanje takmicenja</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Disciplina:</td>
+                <td><select name="disciplinaTakmicenja" [(ngModel)]='disciplinaTakmicenja' (change)='dohvatiTakmicare()'>
+                    <option *ngFor='let d of discipline' value="{{d.naziv}}">{{d.naziv}}</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Tip:</td>
+                <td><select name="tipTakmicenja" [(ngModel)]='tipTakmicenja' (change)='dohvatiTakmicare()'>
+                    <option value="m">Musko</option>
+                    <option value="z">Zensko</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Broj takmicara:</td>
+                <td><select name="brojTakmicara" [(ngModel)]='brojTakmicara'>
+                    <option value="4">4</option>
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="=8">Najvise 8</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Format rezultata:</td>
+                <td>
+                    <input name="formatRezultata" type="text" [(ngModel)]='formatRezultata'>
+                </td>
+            </tr>
+            <tr>
+                <td>Broj krugova:</td>
+                <td>
+                    <input name="brojKrugova(serija)" type="number" [(ngModel)]='brojKrugova'>
+                </td>
+            </tr>
+            <tr>
+                <td>Rangiranje rezultata:</td>
+                <td>
+                    <select name="rangiranjeRezultata" [(ngModel)]='rangiranjeRezultata'>
+                        <option value="max">Po najvecoj vrednosti</option>
+                        <option value="min">Po najmanjoj vrednosti</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Delegat:</td>
+                <td><select name="delegatTakmicenja" [(ngModel)]='delegatTakmicenja'>
+                    <option *ngFor='let d of delegati' value="{{d.ime}}">{{d.ime}}</option>
+                </select></td>
+            </tr>
+            <tr>
+                <button name="dodajTakmicenje" (click)='dodajTakmicenje()'>Dodaj</button>
+            </tr>
+        </table>
+    </form>
+
+    <h2>Prijavljeni takmicari</h2>
+    <table>
+        <th>Redni broj</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Pol</th>
+        <th>Drzava</th>
+        <tr *ngFor="let t of takmicari; let i = index">
+            <td>{{i+1}}</td>
+            <td style="text-align: center;">{{t.ime}}</td>
+            <td style="text-align: center;">{{t.prezime}}</td>
+            <td style="text-align: center;">{{t.pol}}</td>
+            <td style="text-align: center;">{{t.drzava}}</td>
+        </tr>
+    </table>
+</div> -->
